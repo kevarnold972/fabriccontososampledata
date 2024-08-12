@@ -53,7 +53,7 @@
         ],
         "expression": [
           "let",
-          "    database = Sql.Database(\"MWQEVBOSY4FE7EKFUGXD3GSRVI-JTEB245EXQSU5EFYJY65G64WWQ.datawarehouse.fabric.microsoft.com\", \"dfd9ddec-dc77-41e8-89ed-90a9f16a999d\")",
+          "    database = Sql.Database(\"mwqevbosy4fe7ekfugxd3gsrvi-jteb245exqsu5efyjy65g64wwq.datawarehouse.fabric.microsoft.com\", \"c2acc8c8-c5ba-400a-a847-b3434eb26b12\")",
           "in",
           "    database"
         ],

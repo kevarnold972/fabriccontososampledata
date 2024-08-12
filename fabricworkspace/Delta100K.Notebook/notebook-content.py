@@ -8,17 +8,29 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "485d705c-1c4f-45a2-b438-ba4f6a965215",
-# META       "default_lakehouse_name": "NewTest",
+# META       "default_lakehouse": "8d7cd553-801e-48c3-9b36-fe77a9f5fb0b",
+# META       "default_lakehouse_name": "ContosoData",
 # META       "default_lakehouse_workspace_id": "731dc84c-bca4-4e25-90b8-4e3dd37b96b4",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "485d705c-1c4f-45a2-b438-ba4f6a965215"
+# META           "id": "8d7cd553-801e-48c3-9b36-fe77a9f5fb0b"
 # META         }
 # META       ]
 # META     }
 # META   }
 # META }
+
+# MARKDOWN ********************
+
+# # Overview
+# This notebook can be used to setup a Contoso sample data lakehouse from the ready to use data available on https://github.com/sql-bi/Contoso-Data-Generator-V2-Data/releases/tag/ready-to-use-data. This is setup for the 100K rows of data, but the pattern can be used for the others. 
+# 
+# Note: When you create or attach a lakehouse to this notebook, be sure not to use the preview feature for schemas. 
+
+# MARKDOWN ********************
+
+# # Install
+# This will install the 7zip package so it can be used. 
 
 # CELL ********************
 
@@ -30,6 +42,11 @@ pip install py7zr
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# # Setup
+# import the required packages and set the URL
 
 # CELL ********************
 
@@ -44,6 +61,11 @@ zipDataUrl = "https://github.com/sql-bi/Contoso-Data-Generator-V2-Data/releases/
 # META   "language_group": "synapse_pyspark"
 # META }
 
+# MARKDOWN ********************
+
+# # Get the file
+# This cell will perform a GET request to obtain the file and then save it to the Files section of the lakehouse. 
+
 # CELL ********************
 
 response = requests.get(zipDataUrl)
@@ -57,6 +79,11 @@ with open(zipFilePath, 'wb') as file:
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# # Unzip
+# This cell will unzip the files and save them to the Tables area of the lakehouse. 
 
 # CELL ********************
 
