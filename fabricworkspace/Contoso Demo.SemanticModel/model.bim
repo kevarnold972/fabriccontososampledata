@@ -934,7 +934,12 @@
         "measures": [
           {
             "name": "Sales Amount",
-            "expression": "SUM('sales'[NetPrice])",
+            "expression": [
+              "SUMX(",
+              "\t\t\t'sales',",
+              "\t\t\t'sales'[Quantity] * 'sales'[NetPrice]",
+              "\t\t)"
+            ],
             "formatString": "\"$\"#,##0.00",
             "lineageTag": "00bcfce4-a5e0-4f34-a47f-6fd4a1eede95"
           }
